@@ -1,13 +1,6 @@
----
-title: "MentorJunaid - Your Ultimate Coding Mentor"
-description: "A full-stack mentorship platform designed to help developers learn, grow, and accelerate their careers."
----
-
-import Image from 'next/image';
-
 # 🚀 MentorJunaid – Your Ultimate Coding Mentor
 
-<Image src="./public/banner.png" alt="MentorJunaid Banner" width={800} height={400} /> _(Replace with an actual banner if needed)_
+<Image src="./public/banner.png" alt="MentorJunaid Banner" width={800} height={400} />
 
 **MentorJunaid** is a **full-stack mentorship platform** designed to help developers learn, grow, and accelerate their careers through structured roadmaps, interactive learning, and hands-on coding resources.
 
