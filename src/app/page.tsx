@@ -2,54 +2,56 @@
 
 import { useState } from "react"
 import { Dialog, DialogPanel } from "@headlessui/react"
+
 import {
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react"
-import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline"
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  LockClosedIcon,
-} from "@heroicons/react/20/solid"
+  ChartBarIcon,
+  CodeBracketIcon,
+  MapIcon,
+  MinusSmallIcon,
+  PlusSmallIcon,
+} from "@heroicons/react/24/outline"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 
 import Image from "next/image"
 
 const featuredTestimonial = {
-  body: "Integer id nunc sit semper purus. Bibendum at lacus ut arcu blandit montes vitae auctor libero. Hac condimentum dignissim nibh vulputate ut nunc. Amet nibh orci mi venenatis blandit vel et proin. Non hendrerit in vel ac diam.",
+  body: "I built MentorJunaid to provide aspiring developers with the structured learning, hands-on projects, and expert guidance I wish I had when starting. Our mission is to make web development accessible and career-changing for everyone.",
   author: {
-    name: "Brenna Goyette",
-    handle: "brennagoyette",
+    name: "🚀 Junaid Qureshi",
+    handle: "Founder & Full-Stack Developer",
     imageUrl:
-      "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80",
+      "https://media.licdn.com/dms/image/v2/C4D03AQEaZWgEBJtukA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1642747475546?e=1745452800&v=beta&t=YPmAn2J8MPylShG4v0zWyRNN8p0PKeKwznDK3n68ycU",
     logoUrl:
-      "https://tailwindui.com/plus-assets/img/logos/savvycal-logo-gray-900.svg",
+      "https://media.licdn.com/dms/image/v2/D4D0BAQHvvNKkdai7fA/company-logo_100_100/company-logo_100_100/0/1723751554273/devnito_logo?e=1747872000&v=beta&t=O4ugvAlTLICGCgLY2nv6POeNV0R81dwgqgoYHkN6-To",
   },
 }
 const testimonials = [
   [
     [
       {
-        body: "Laborum quis quam. Dolorum et ut quod quia. Voluptas numquam delectus nihil. Aut enim doloremque et ipsam.",
+        body: "The progress tracking and structured roadmaps kept me motivated. Best decision I made!",
         author: {
-          name: "Leslie Alexander",
-          handle: "lesliealexander",
+          name: "Samar Ali",
+          handle: "Founder of Podiocut",
           imageUrl:
-            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+            "https://media.licdn.com/dms/image/v2/D4D03AQHU5RSG2BjaNw/profile-displayphoto-shrink_200_200/B4DZTBL_fIGcAg-/0/1738407934551?e=1745452800&v=beta&t=kWbN0ePPLD9NVeO7e4A5Ld0dvc8SVYYtd6ErTbIZRVc",
         },
       },
       // More testimonials...
     ],
     [
       {
-        body: "Aut reprehenderit voluptatem eum asperiores beatae id. Iure molestiae ipsam ut officia rem nulla blanditiis.",
+        body: "The hands-on projects and interactive learning approach made it easy to grasp complex concepts. Highly recommend!",
         author: {
-          name: "Lindsay Walton",
-          handle: "lindsaywalton",
+          name: "Shehzor Memon",
+          handle: "MERN Stack Developer",
           imageUrl:
-            "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+            "https://media.licdn.com/dms/image/v2/D4D35AQFLrL9aByeYqw/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1724691528674?e=1740646800&v=beta&t=qiTu_genl6R_5pt4Xnkl43XBNIP2_lSl_11VvrAbUtA",
         },
       },
       // More testimonials...
@@ -58,24 +60,24 @@ const testimonials = [
   [
     [
       {
-        body: "Voluptas quos itaque ipsam in voluptatem est. Iste eos blanditiis repudiandae. Earum deserunt enim molestiae ipsum perferendis recusandae saepe corrupti.",
+        body: "This platform provides everything needed to become a full-stack developer. The step-by-step guidance is top-notch!",
         author: {
-          name: "Tom Cook",
-          handle: "tomcook",
+          name: "Maroof Qureshi",
+          handle: "Full Stack Developer",
           imageUrl:
-            "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+            "https://media.licdn.com/dms/image/v2/D4D35AQGBRRi15C196Q/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1722693756410?e=1740646800&v=beta&t=EdkPVfj17SP9LCiAtz1MwyQXyVi4f95mYArVsCK--sU",
         },
       },
       // More testimonials...
     ],
     [
       {
-        body: "Molestias ea earum quos nostrum doloremque sed. Quaerat quasi aut velit incidunt excepturi rerum voluptatem minus harum.",
+        body: "The structured roadmap for front-end development helped me gain confidence and land my first job as a React developer!",
         author: {
-          name: "Leonard Krasner",
-          handle: "leonardkrasner",
+          name: "Muhammad Bilal",
+          handle: "React Developer",
           imageUrl:
-            "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+            "https://media.licdn.com/dms/image/v2/D4D35AQEdrWT03uv_6w/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1714738448385?e=1740646800&v=beta&t=qCO_TCzzg8GrNn8Rb_XRiB3TR_VrbbNipAvlg5wbMf0",
         },
       },
       // More testimonials...
@@ -88,117 +90,62 @@ function classNames(...classes: (string | boolean | undefined | null)[]) {
 }
 
 const navigation = [
-  { name: "Product", href: "#" },
+  { name: "Roadmaps", href: "#" },
   { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Community", href: "#" },
+  { name: "About", href: "#" },
 ]
 const stats = [
-  { id: 1, name: "Creators on the platform", value: "8,000+" },
-  { id: 2, name: "Flat platform fee", value: "3%" },
-  { id: 3, name: "Uptime guarantee", value: "99.9%" },
-  { id: 4, name: "Paid out to creators", value: "$70M" },
+  { id: 1, name: "Websites Developed", value: "📌 200+" },
+  { id: 2, name: "Happy Clients Worldwide", value: "🌍 60+" },
+  { id: 3, name: "Earned from Web Development", value: "📈 $100K+" },
+  { id: 4, name: "Uptime & Reliability", value: "⚡ 99.9%" },
 ]
 const features = [
   {
-    name: "Push to deploy",
+    name: "Learn by Doing",
     description:
-      "Commodo nec sagittis tortor mauris sed. Turpis tortor quis scelerisque diam id accumsan nullam tempus. Pulvinar etiam lacus volutpat eu. Phasellus praesent ligula sit faucibus.",
+      "Practice coding with real-world projects, interactive exercises, and step-by-step guidance to master web development.",
     href: "#",
-    icon: CloudArrowUpIcon,
+    icon: CodeBracketIcon,
+    cta: "🔗 Learn More →",
   },
   {
-    name: "SSL certificates",
+    name: "Follow a Clear Learning Path",
     description:
-      "Pellentesque enim a commodo malesuada turpis eleifend risus. Facilisis donec placerat sapien consequat tempor fermentum nibh.",
+      "Progress through carefully designed roadmaps covering front-end, back-end, and full-stack development.",
     href: "#",
-    icon: LockClosedIcon,
+    icon: MapIcon,
+    cta: "📚 Explore Roadmaps →",
   },
   {
-    name: "Simple queues",
+    name: "Stay Motivated & Achieve Goals",
     description:
-      "Pellentesque sit elit congue ante nec amet. Dolor aenean curabitur viverra suspendisse iaculis eget. Nec mollis placerat ultricies euismod ut condimentum.",
+      "Mark lessons as complete, earn badges, and track your progress as you advance in your web development journey.",
     href: "#",
-    icon: ArrowPathIcon,
+    icon: ChartBarIcon,
+    cta: "🎯 Start Learning →",
   },
 ]
+
 const footerNavigation = {
-  solutions: [
-    { name: "Marketing", href: "#" },
-    { name: "Analytics", href: "#" },
-    { name: "Automation", href: "#" },
-    { name: "Commerce", href: "#" },
-    { name: "Insights", href: "#" },
+  mentorship: [
+    { name: "Roadmaps", href: "#" },
+    { name: "Community", href: "#" },
+    { name: "MentorGPT", href: "#" },
+    { name: "Resources", href: "#" },
   ],
-  support: [
-    { name: "Submit ticket", href: "#" },
-    { name: "Documentation", href: "#" },
-    { name: "Guides", href: "#" },
-  ],
-  company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Jobs", href: "#" },
-    { name: "Press", href: "#" },
-  ],
+  support: [{ name: "FAQs", href: "#" }],
+  company: [{ name: "About Us", href: "#" }],
   legal: [
-    { name: "Terms of service", href: "#" },
-    { name: "Privacy policy", href: "#" },
-    { name: "License", href: "#" },
+    { name: "Terms of Service", href: "#" },
+    { name: "Privacy Policy", href: "#" },
   ],
   social: [
     {
-      name: "Facebook",
-      href: "#",
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: "Instagram",
-      href: "#",
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
-      name: "X",
-      href: "#",
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
-        </svg>
-      ),
-    },
-    {
-      name: "GitHub",
-      href: "#",
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
-        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path
-            fillRule="evenodd"
-            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-            clipRule="evenodd"
-          />
-        </svg>
-      ),
-    },
-    {
       name: "YouTube",
-      href: "#",
-      icon: (props: React.SVGProps<SVGSVGElement>) => (
+      href: "https://www.youtube.com/DeveloperJunaid",
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -208,14 +155,81 @@ const footerNavigation = {
         </svg>
       ),
     },
+    {
+      name: "GitHub",
+      href: "https://github.com/developer-junaid/",
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
+
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/developer-junaid/",
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3.5 8h3v11h-3V8zm7.5 0h2.8v1.54h.04a3.07 3.07 0 0 1 2.76-1.52c2.94 0 3.5 1.94 3.5 4.48V19h-3v-5.07c0-1.21-.03-2.77-1.69-2.77-1.69 0-1.95 1.32-1.95 2.68V19h-3V8z" />
+        </svg>
+      ),
+    },
   ],
 }
 
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
+    question: "1. What is MentorJunaid?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "🚀 MentorJunaid is a structured learning platform that helps developers master web development through guided roadmaps, progress tracking, and real-world projects.",
+  },
+  {
+    question: "2. Who is this platform for?",
+    answer:
+      "💡 Whether you're a beginner starting from scratch or an experienced developer looking to upskill, MentorJunaid provides learning paths for all levels.",
+  },
+  {
+    question: "3. How do I track my progress?",
+    answer:
+      "📊 You can mark lessons as complete, earn badges, and track your progress with an interactive dashboard.",
+  },
+  {
+    question: "4. Are the courses free?",
+    answer:
+      "💰 Some roadmaps and resources are free, while premium content requires a one-time fee or subscription for full access.",
+  },
+  {
+    question: "5. Can I get a certificate after completing a roadmap?",
+    answer:
+      "📜 Certificates will be available in future updates, allowing you to showcase your skills and achievements.",
+  },
+  {
+    question: "6. Do I need prior coding experience?",
+    answer:
+      "🖥️ No, our beginner-friendly roadmaps guide you step-by-step, starting with the fundamentals.",
+  },
+  {
+    question: "7. What technologies do you cover?",
+    answer:
+      "🛠 We cover front-end (HTML, CSS, JavaScript, React), back-end (Node.js, Express, MongoDB), and full-stack development.",
+  },
+  {
+    question: "8. Can I access the platform on mobile?",
+    answer:
+      "📱 Yes, the platform is mobile-friendly, so you can learn anytime, anywhere.",
+  },
+  {
+    question: "9. Will there be live mentorship sessions?",
+    answer:
+      "🎤 Live Q&A sessions and mentorship features are planned for future updates.",
+  },
+  {
+    question: "10. How do I get started?",
+    answer: "🔥 Simply sign up, choose a roadmap, and start learning!",
   },
   // More questions...
 ]
@@ -235,13 +249,14 @@ export default function Example() {
             <div className="flex lg:flex-1">
               <a href="#" className="-m-1.5 p-1.5">
                 <span className="sr-only">Your Company</span>
-                <Image
+                {/* <Image
                   alt="Company Logo"
                   src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                   width={32} // Adjust based on actual size
                   height={32}
                   className="h-8 w-auto"
-                />
+                /> */}
+                <div className="w-[32px] h-[32px] text-5xl"> 🎓</div>
               </a>
             </div>
             <div className="flex lg:hidden">
@@ -281,13 +296,14 @@ export default function Example() {
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
-                  <Image
+                  {/* <Image
                     alt="Company Logo"
                     src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
                     width={32} // Adjust as needed
                     height={32}
                     className="h-8 w-auto"
-                  />
+                  /> */}
+                  <div className="w-[32px] h-[32px] text-5xl"> 🎓</div>
                 </a>
                 <button
                   type="button"
@@ -342,12 +358,12 @@ export default function Example() {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-2xl text-center">
                 <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-7xl">
-                  Data to enrich your online business
+                  🎓 From Beginner to Pro—Follow the Right Roadmap
                 </h1>
                 <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-                  Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure
-                  qui lorem cupidatat commodo. Elit sunt amet fugiat veniam
-                  occaecat.
+                  Learn from structured roadmaps, track progress, and level up
+                  your skills with real-world projects. Stay ahead with the
+                  latest web technologies, mentorship, and gamified learning.
                 </p>
                 <div className="mt-10 flex items-center justify-center gap-x-6">
                   <a
@@ -357,7 +373,7 @@ export default function Example() {
                     Get started
                   </a>
                   <a href="#" className="text-sm/6 font-semibold text-gray-900">
-                    Learn more <span aria-hidden="true">→</span>
+                    Explore Roadmaps <span aria-hidden="true">→</span>
                   </a>
                 </div>
               </div>
@@ -394,15 +410,14 @@ export default function Example() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base/7 font-semibold text-indigo-600">
-              Deploy faster
+              🚀 Learn Faster
             </h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl lg:text-balance">
-              Everything you need to deploy your app
+              Everything You Need to Master Web Development
             </p>
             <p className="mt-6 text-lg/8 text-gray-600">
-              Quis tellus eget adipiscing convallis sit sit eget aliquet quis.
-              Suspendisse eget egestas a elementum pulvinar et feugiat blandit
-              at. In mi viverra elit nunc.
+              Gain the skills, knowledge, and confidence to build real-world
+              projects with expert guidance and structured learning.
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -423,7 +438,7 @@ export default function Example() {
                         href={feature.href}
                         className="text-sm/6 font-semibold text-indigo-600"
                       >
-                        Learn more <span aria-hidden="true">→</span>
+                        {feature.cta} <span aria-hidden="true"></span>
                       </a>
                     </p>
                   </dd>
@@ -439,11 +454,11 @@ export default function Example() {
         <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-              Boost your productivity. Start using our app today.
+              👨‍💻 Learn. Build. Grow.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-600">
-              Incididunt sint fugiat pariatur cupidatat consectetur sit cillum
-              anim id veniam aliqua proident excepteur commodo do ea.
+              Gain hands-on experience, track your progress, and achieve your
+              development goals with structured learning.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
@@ -466,10 +481,10 @@ export default function Example() {
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="text-center">
               <h2 className="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-                Trusted by creators worldwide
+                🚀 Trusted by Developers Worldwide
               </h2>
               <p className="mt-4 text-lg/8 text-gray-600">
-                Lorem ipsum dolor sit amet consect adipisicing possimus.
+                Empowering learners & mentors to grow in web development.
               </p>
             </div>
             <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
@@ -517,10 +532,10 @@ export default function Example() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-base/7 font-semibold text-indigo-600">
-              Testimonials
+              💬 Testimonials
             </h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
-              We have worked with thousands of amazing people
+              Helping developers achieve their goals with expert guidance.
             </p>
           </div>
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
@@ -538,7 +553,7 @@ export default function Example() {
                   <div className="font-semibold">
                     {featuredTestimonial.author.name}
                   </div>
-                  <div className="text-gray-600">{`@${featuredTestimonial.author.handle}`}</div>
+                  <div className="text-gray-600">{`${featuredTestimonial.author.handle}`}</div>
                 </div>
                 <img
                   alt=""
@@ -582,7 +597,7 @@ export default function Example() {
                             <div className="font-semibold">
                               {testimonial.author.name}
                             </div>
-                            <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
+                            <div className="text-gray-600">{`${testimonial.author.handle}`}</div>
                           </div>
                         </figcaption>
                       </figure>
@@ -644,35 +659,36 @@ export default function Example() {
               Get started
             </h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-              Boost your productivity. Start using our app today.
+              Take Your Web Development Skills to the Next Level.
             </p>
             <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-gray-400">
-              Incididunt sint fugiat pariatur cupidatat consectetur sit cillum
-              anim id veniam aliqua proident excepteur commodo do ea.
+              A subtle and refined approach to achieving your goals, blending
+              expertise with efficiency to create seamless experiences.
             </p>
             <div className="mt-8 flex justify-center">
               <a
                 href="#"
                 className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
               >
-                Get started
+                🔍 Find Your Path
               </a>
             </div>
           </div>
           <div className="mt-24 border-t border-white/10 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
-            <img
+            {/* <img
               alt="Company name"
               src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
               className="h-9"
-            />
+            /> */}
+            <div className="w-[32px] h-[32px] text-5xl"> 🎓</div>
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
                   <h3 className="text-sm/6 font-semibold text-white">
-                    Solutions
+                    Mentorship
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {footerNavigation.solutions.map((item) => (
+                    {footerNavigation.mentorship.map((item) => (
                       <li key={item.name}>
                         <a
                           href={item.href}
@@ -744,6 +760,8 @@ export default function Example() {
                 <a
                   key={item.name}
                   href={item.href}
+                  target="_blank"
+                  rel="no-referrrer"
                   className="text-gray-400 hover:text-gray-300"
                 >
                   <span className="sr-only">{item.name}</span>
@@ -752,7 +770,7 @@ export default function Example() {
               ))}
             </div>
             <p className="mt-8 text-sm/6 text-gray-400 md:order-1 md:mt-0">
-              &copy; 2024 Your Company, Inc. All rights reserved.
+              &copy; 2025 Mentor Junaid. All rights reserved.
             </p>
           </div>
         </div>
