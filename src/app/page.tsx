@@ -18,6 +18,7 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 
 import Image from "next/image"
+import Link from "next/link"
 
 const featuredTestimonial = {
   body: "I built MentorJunaid to provide aspiring developers with the structured learning, hands-on projects, and expert guidance I wish I had when starting. Our mission is to make web development accessible and career-changing for everyone.",
@@ -281,9 +282,12 @@ export default function Example() {
               ))}
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-              <a href="#" className="text-sm/6 font-semibold text-gray-900">
+              <Link
+                href="/login"
+                className="text-sm/6 font-semibold text-gray-900"
+              >
                 Log in <span aria-hidden="true">&rarr;</span>
-              </a>
+              </Link>
             </div>
           </nav>
           <Dialog
